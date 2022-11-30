@@ -5,6 +5,7 @@
     border-top: 1px solid #8c8c8c1f;
     margin: 0 30px;
     padding: 14px 10px;
+
     h2 {
         font-size: 20px;
         cursor: pointer;
@@ -14,6 +15,7 @@
         font-weight: bold;
         line-height: 1.2;
     }
+
     &:last-child {
         border-bottom: 1px solid #8c8c8c1f;
     }
@@ -29,6 +31,7 @@
     margin-bottom: 12px;
     color: var(--secondary-text-color);
     line-height: 1;
+
     em {
         margin-left: 4px;
         margin-right: 4px;
@@ -47,6 +50,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 8px;
+
     a {
         font-size: 14px;
         color: var(--secondary-text-color);
@@ -67,39 +71,82 @@
     flex-direction: column;
 }
 
-.thumbImgWrap {
-    height: auto;
-    height: 100px;
-    width: 150px;
-    position: relative;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 0;
-    flex-shrink: 0;
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    margin-bottom: 5px;
+.thumbImg {
+    width: 100%;
+    height: 200px;
+    // background-size: cover;
+    // background-position: 100% 100%;
+    // background-color: var(--main-bg-color);
+}
+.articleLayout{
+    display: flex;
+    order: 2;
+}
+.articleWrap {
+    color: #6666;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-family: Source Sans Pro, Arial, sans-serif;
+    a{
+        color: inherit;
+    }
     img {
         width: 100%;
-        height: auto;
+        // height: auto;
         min-height: 100%;
         display: block;
         max-width: 100%;
         transition: all 444ms ease-in-out;
     }
+
     &:after {
         content: '';
         display: block;
-        padding-top: 100%;
+        // padding-top: 100%;
         box-sizing: border-box;
     }
-}
 
-.thumbImg {
-    height: 100px;
-    width: 150px;
-    background-size: cover;
-    background-position: 100% 100%;
-    background-color: var(--main-bg-color);
+    .title {
+        color: #161616;
+        font-size: 24px;
+        font-family: "Playfair Display";
+        margin:0;
+    }
+
+    .categoryName {
+        color: #f28699;
+        .textIn {
+            align-self: flex-end;
+            font-style: italic;
+            
+        }
+
+        .category {
+            font-size: 13px;
+            font-weight: 600;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            margin-left: 5px;
+        }
+    }
+    
+    .createDate{
+        .date{
+            color: #b4b4b4;
+            -webkit-text-size-adjust: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .comment{
+            color: #5b5b5b;
+
+        }
+    }
+    .itemSummary{
+
+    }
 }

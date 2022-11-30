@@ -4,7 +4,7 @@ import Categories from '../categories';
 import ArticleItem from './item';
 import AppLayout from '@blog/client/web/layouts/app';
 import { useFetchArticlesQuery, fetchArticles, fetchCategories, useFetchConfigQuery } from '@blog/client/web/api';
-import { Empty, Skeleton, Pagination } from 'antd';
+import { Empty, Skeleton, Pagination, Row, Col } from 'antd';
 import Link from '../link';
 import { useRouter } from 'next/router';
 import { isArray, toInteger } from 'lodash';
@@ -35,7 +35,17 @@ const Page = () => {
                 {!isLoading && data.items.length <= 0 ? (
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>Không có dữ liệu~~</span>} />
                 ) : (
-                    data.items.map((item) => <ArticleItem item={item} key={item._id}></ArticleItem>)
+                    <Row>
+                        {data.items.map(
+                            (item, index) => (
+                                // <div className={style.articleLayout}>
+                                <Col xs={24} sm={24} md={12}>
+                                    <ArticleItem item={item} key={item._id}></ArticleItem>
+                                </Col>
+                            )
+                            //   </div>
+                        )}
+                    </Row>
                 )}
             </div>
             {data.totalCount > 0 && (
