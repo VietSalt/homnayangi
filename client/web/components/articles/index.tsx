@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Categories from '../categories';
 import ArticleItem from './item';
@@ -18,6 +18,11 @@ const Page = () => {
     const cid: string = isArray(router.query.cid) ? router.query.cid.join(',') : router.query.cid || '';
     const tag: string = isArray(router.query.tag) ? router.query.tag.join(',') : router.query.tag || '';
     const { data = { items: [], totalCount: 0 }, isLoading } = useFetchArticlesQuery({ page, filter: { cid, tag } });
+    const [innerWidth, setInnerWidth] = useState(1000);
+
+    useEffect(() => {
+        setInnerWidth(window.innerWidth);
+    }, []);
     return (
         <AppLayout>
             <Head>
@@ -34,17 +39,37 @@ const Page = () => {
                     ))}
                 {!isLoading && data.items.length <= 0 ? (
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>Không có dữ liệu~~</span>} />
+                ) : innerWidth > 576 ? (
+                    <Row>
+                        <Col xs={24} sm={12}>
+                            {data.items.map((item, index) => {
+                                return index % 2 === 0 && <ArticleItem item={item} key={item._id}></ArticleItem>;
+
+                                // <div className={style.articleLayout}>
+                            })}
+                        </Col>
+                        <Col xs={24} sm={12}>
+                            {data.items.map((item, index) => {
+                                return (
+                                    index % 2 !== 0 && (
+                                        <>
+                                            <ArticleItem item={item} key={item._id}></ArticleItem>
+                                        </>
+                                    )
+                                );
+                                // <div className={style.articleLayout}>
+                            })}
+                        </Col>
+                    </Row>
                 ) : (
                     <Row>
-                        {data.items.map(
-                            (item, index) => (
+                        <Col xs={24} sm={12}>
+                            {data.items.map((item, index) => {
+                                return index % 2 === 0 && <ArticleItem item={item} key={item._id}></ArticleItem>;
+
                                 // <div className={style.articleLayout}>
-                                <Col xs={24} sm={24} md={12}>
-                                    <ArticleItem item={item} key={item._id}></ArticleItem>
-                                </Col>
-                            )
-                            //   </div>
-                        )}
+                            })}
+                        </Col>
                     </Row>
                 )}
             </div>
