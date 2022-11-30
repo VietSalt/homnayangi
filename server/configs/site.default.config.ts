@@ -10,11 +10,9 @@ const smptConfig = {
 export type SmptConfigType = typeof smptConfig;
 
 const config = {
-    siteTitle: 'Salt Blog ',
-    siteMetaKeyWords:
-        'Trang web cá nhân của Việt Salt, blog của Việt Salt, phát triển web, NodeJS Full Stack, Front -end Engineer, Back -end Development, Docker Container, Daily Life',
-    siteMetaDescription:
-        'Trang web cá nhân của Việt Salt tập trung vào phát triển web, đặc biệt là phát triển front-end.Tôi thích làm công nghệ và thích chia sẻ công nghệ.Trang web này chủ yếu để chia sẻ nội dung của các bài viết liên quan đến Web, cũng như các bản ghi liên quan đến công việc cá nhân!',
+    siteTitle: 'Hôm nay ăn gì ? ',
+    siteMetaKeyWords: 'Hôm nay ăn gì ?',
+    siteMetaDescription: 'Hôm nay ăn gì ?',
     siteLogo: '/static/logo.svg',
 
     siteIcp: 'Hà Nội Việt Nam',

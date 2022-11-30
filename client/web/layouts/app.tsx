@@ -18,14 +18,18 @@ const App = (props: { children?: ReactNode }) => {
         t && dispatch(setTheme({ theme: t }));
     }, [dispatch]);
     const { data: config } = useFetchConfigQuery();
+    console.log('con fig: ', config?.siteMetaKeyWords);
     return (
         <div className={styles.app}>
             <AppHeader />
             <Head>
                 <meta content={config?.siteMetaKeyWords} name="Keywords" />
                 <meta content={config?.siteMetaDescription} name="description" />
-                <meta http-equiv="Content-Security-Policy”
-content=”default-src ’self’; img-src *"/>
+
+                <meta
+                    http-equiv="Content-Security-Policy”
+content=”default-src ’self’; img-src *"
+                />
                 {/* <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1239.0.min.js"></script> */}
                 {/* <meta http-equiv="Content-Security-Policy" content="default-src *;
    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
