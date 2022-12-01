@@ -102,11 +102,10 @@ const Item = (props: any) => {
                 <span className={style.textIn}>Tại </span>
                 <span className={style.category}>{item.category.name.toUpperCase()}</span>
             </div>
-            <p className={style.title}>
-                <Link href={`/blog/articles/${item._id}`} passHref={true}>
-                    {titleCase(item.title)}
-                </Link>
-            </p>
+            <Link href={`/blog/articles/${item._id}`} passHref={true}>
+                <h2 className={style.title}>{titleCase(item.title)}</h2>
+            </Link>
+
             <div className={style.createDate}>
                 <span className={style.date}>
                     {new Date(item.createdAt).toLocaleDateString('vi', {

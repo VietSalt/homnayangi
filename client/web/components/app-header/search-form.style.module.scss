@@ -18,6 +18,12 @@
             box-shadow: none;
         }
     }
+    span{
+        background: none;
+    }
+    button{
+        background-color: transparent;
+    }
     button {
         // background-color: var(--main-bg-color);
         background-color: none;

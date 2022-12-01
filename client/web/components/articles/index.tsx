@@ -22,6 +22,7 @@ const Page = () => {
     const [innerWidth, setInnerWidth] = useState(1000);
 
     useEffect(() => {
+        setInnerWidth(window.innerWidth);
         window.addEventListener('resize', () => {
             setInnerWidth(window.innerWidth);
         });

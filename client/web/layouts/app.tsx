@@ -57,7 +57,7 @@ content=”default-src ’self’; img-src *"
                 <Global
                     styles={css`
                         :root {
-                            --title-text-color: rgba(255, 255, 255, 0.85);
+                            --title-text-color: rgba(255, 255, 255, 0.95);
                             --primary-text-color: rgba(255, 255, 255, 0.65);
                             --secondary-text-color: rgba(255, 255, 255, 0.45);
                             --disabal-color: rgba(255, 255, 255, 0.25);

@@ -112,10 +112,12 @@
     }
 
     .title {
-        color: #161616;
+        cursor: pointer;
+        color: var(--title-text-color);
         font-size: 24px;
         font-family: "Playfair Display";
         margin:0;
+        text-align: center;
     }
 
     .categoryName {
