@@ -33,7 +33,9 @@ const SearchResultFooter = (props: { isLoading: boolean; totalCount: number }) =
             ) : (
                 <div>
                     <GithubIcon width="16px" height="16px"></GithubIcon>
-                    {totalCount <= 0 ? 'Không có kết quả tìm kiếm' : `共 ${totalCount} Bản ghi thanh, thử các từ khóa khác 👍`}
+                    {totalCount <= 0
+                        ? 'Không có kết quả tìm kiếm'
+                        : `共 ${totalCount} Bản ghi thanh, thử các từ khóa khác 👍`}
                 </div>
             )}
         </div>
@@ -94,17 +96,20 @@ export const SearchForm = (props) => {
     };
     return (
         <div className={style.searchForm} style={props.style}>
-            <Input.Search
-                onSearch={() => {
-                    setIsActiveNavSearchDropdown(() => {
-                        return true;
-                    });
-                }}
-                onFocus={onfocus}
-                onInput={oninput}
-                onBlur={onblur}
-                placeholder="Vui lòng nhập từ khóa"
-            />
+            <div className={style.searchInput}>
+                <Input.Search
+                    onSearch={() => {
+                        setIsActiveNavSearchDropdown(() => {
+                            return true;
+                        });
+                    }}
+                    onFocus={onfocus}
+                    onInput={oninput}
+                    onBlur={onblur}
+                    placeholder="Tìm kiếm tại đây"
+                />
+            </div>
+
             <div
                 onMouseDown={(event) => event.preventDefault()}
                 className={style.searchPanel}
@@ -112,7 +117,7 @@ export const SearchForm = (props) => {
             >
                 <div className={style.panelHeader}>
                     Blog
-                    <span onClick={foldNavList}>Cất đi</span>
+                    <span onClick={foldNavList}>Ẩn đi</span>
                 </div>
                 <SearchResultList items={items} isLoading={isLoading}></SearchResultList>
                 <SearchResultFooter isLoading={isLoading} totalCount={totalCount}></SearchResultFooter>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './style.module.scss';
 import NavLink from '../nav-link';
 import Link from '../link';
@@ -18,6 +18,13 @@ export const AppHeader = () => {
     const dispatch = useAppDispatch();
     const { data: config } = useFetchConfigQuery();
     const theme = useSelector((state: RootState) => state.app.theme);
+    const [innerWidth, setInnerWidth] = useState(1000);
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setInnerWidth(window.innerWidth);
+        });
+    }, []);
     return (
         <header className={style.appHeader}>
             <Link href="/blog" passHref={true}>
@@ -52,8 +59,9 @@ export const AppHeader = () => {
                     </a>
                 </NavLink> */}
             </nav>
+
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                <SearchForm style={{ marginRight: '15px' }} />
+                {innerWidth > 576 && <SearchForm />}
                 {theme === 'light' ? (
                     <Button
                         type="link"
