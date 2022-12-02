@@ -73,7 +73,7 @@ const Page = () => {
                     <Row>
                         <Col xs={24} sm={12}>
                             {data.items.map((item, index) => {
-                                return index % 2 === 0 && <ArticleItem item={item} key={item._id}></ArticleItem>;
+                                return <ArticleItem item={item} key={item._id}></ArticleItem>;
 
                                 // <div className={style.articleLayout}>
                             })}
