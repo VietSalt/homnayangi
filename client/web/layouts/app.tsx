@@ -9,6 +9,7 @@ import Head from 'next/head';
 import { useFetchConfigQuery } from '../api';
 import styles from './app.module.scss';
 import { useAppDispatch } from '../hooks/app';
+import { Col, Row } from 'antd';
 
 const App = (props: { children?: ReactNode }) => {
     const theme = useSelector((state: RootState) => state.app.theme);
@@ -28,12 +29,12 @@ const App = (props: { children?: ReactNode }) => {
 
                 <meta
                     http-equiv="Content-Security-Policy”
-content=”default-src ’self’; img-src *"
+    content=”default-src ’self’; img-src *"
                 />
                 {/* <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1239.0.min.js"></script> */}
                 {/* <meta http-equiv="Content-Security-Policy" content="default-src *;
-   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-   style-src  'self' 'unsafe-inline' *"></meta> */}
+    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+    style-src  'self' 'unsafe-inline' *"></meta> */}
             </Head>
             {theme === 'light' ? (
                 <Global

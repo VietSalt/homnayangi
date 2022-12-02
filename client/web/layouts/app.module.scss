@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: column;
     max-width: 1200px;
+    @media only screen and (max-width: 700px) {
+        width: 120vw;
+      }
     margin: 0 auto;
     flex: 1 0 auto;
     :global {
@@ -20,7 +23,8 @@
             animation-name: slideInUp;
         }
         .main {
-            flex: 1 0 auto;
+            // flex: 1 0 auto;
+            width: 100%;
             background-color: var(--main-bg-color);
         }
         .react-calendar-heatmap text {
