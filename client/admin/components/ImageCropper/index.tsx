@@ -176,8 +176,8 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
             return {
                 ...val,
                 unit: 'px',
-                width: minWidth,
-                height: minHeight,
+                width: imgRef.current.offsetWidth,
+                height: imgRef.current.offsetHeight,
                 x,
                 y,
             };
@@ -195,7 +195,10 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
 
             if (!imgRef.current || !fileRef.current || !crop) return;
 
-            const canvas = getCroppedCanvas(imgRef.current, crop, { width: minWidth, height: minHeight });
+            const canvas = getCroppedCanvas(imgRef.current, crop, {
+                width: imgRef.current.offsetWidth,
+                height: imgRef.current.offsetHeight,
+            });
             if (!canvas) return;
 
             // 将 canvas 转为文件
@@ -247,7 +250,7 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
             {imageSrc && (
                 <Modal
                     bodyStyle={{
-                        maxHeight: '300px',
+                        maxHeight: '1000px',
                         overflow: 'auto',
                     }}
                     visible={true}
@@ -263,7 +266,7 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
                     {/* 裁剪 */}
                     <div className={styles.imageCropperModal}>
                         <ReactCrop
-                            aspect={aspectRatio}
+                            // aspect={aspectRatio}
                             crop={crop}
                             keepSelection
                             maxWidth={maxWidth}

@@ -76,7 +76,7 @@ export default function Index({ visible, onCancel, formData }) {
                         getValueFromEvent={handleUpload}
                         rules={[{ required: false, message: 'Ảnh bìa không thể trống!' }]}
                     >
-                        <ImageCropper aspectRatio={3 / 2} minWidth={300} maxWidth={300} minHeight={200} maxHeight={200}>
+                        <ImageCropper minWidth={300} maxWidth={100000} minHeight={200} maxHeight={100000}>
                             <UploadButton></UploadButton>
                         </ImageCropper>
                     </Form.Item>
