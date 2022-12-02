@@ -66,9 +66,9 @@ export const CommentForm = (props: Props) => {
             });
         }
         if (!isLength(data.content, { min: 1 })) {
-            return setErrorMessage('最少输入6个字符！');
+            return setErrorMessage('Nhập ít nhất 6 ký tự!');
         } else if (!isLength(data.content, { max: 490 })) {
-            return setErrorMessage('最多只能输入490个字符！');
+            return setErrorMessage('Bạn chỉ có thể nhập 490 ký tự nhiều nhất!');
         }
         setButtonLoading(true);
         axios
@@ -77,7 +77,7 @@ export const CommentForm = (props: Props) => {
                 location.reload();
             })
             .catch(() => {
-                setErrorMessage('服务器开小差去了，请尝试刷新页面，再进行提交！');
+                setErrorMessage('Máy chủ thông báo, vui lòng cố gắng làm mới trang và gửi nó!');
             });
     };
     return (
