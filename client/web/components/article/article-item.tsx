@@ -1,11 +1,10 @@
-import Link from '../link';
-import React from 'react';
 import { parseTime } from '@blog/client/libs/time';
-import Comment from './comment';
 import { Breadcrumb } from 'antd';
 import dynamic from 'next/dynamic';
-const ArticleAddress = dynamic(() => import('./article-address'), { ssr: false });
+import Link from '../link';
 import style from './article-item.style.module.scss';
+import Comment from './comment';
+const ArticleAddress = dynamic(() => import('./article-address'), { ssr: false });
 const MarkdownBody = dynamic(() => import('../markdown-body'), { ssr: false });
 
 interface Props {
@@ -58,8 +57,6 @@ export default function ArticleItem(props: Props) {
                         </span>
                         <span>Số lần đọc {article.viewsCount}</span>
                     </div>
-                    <strong>Liên kết trong bài viết này:</strong>
-                    <ArticleAddress articleId={article._id}></ArticleAddress>
                 </div>
             </div>
             <div className={style.footer}>
