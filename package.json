@@ -112,7 +112,7 @@
     "dayjs": "^1.11.3",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^12.1.6",
+    "eslint-config-next": "^13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "find-root": "^1.1.0",
