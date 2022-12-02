@@ -3,6 +3,7 @@ import style from './style.module.scss';
 import vultrPng from '@blog/client/assets/banners/vultr_banner_300x250.png';
 import { parseTime } from '@blog/client/libs/time';
 import Image from 'next/image';
+import { Col, Row } from 'antd';
 
 interface ItemProps {
     _id: string;
@@ -45,7 +46,7 @@ export default function Index(props: { recentArticles: ItemProps[] }) {
     return (
         <section className={style.widgetArea}>
             <h3 className={style.widgetAreaTitle}>Bài viết gần đây</h3>
-            <div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                 {arr.map((item) => {
                     return <Item item={item} key={item._id}></Item>;
                 })}

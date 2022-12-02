@@ -1,20 +1,22 @@
 .widgetArea {
-    width: 200px;
-    padding-top: 20px;
+    width: 100%;
+    padding: 20px;
+
 }
 .widgetAreaTitle {
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: 600;
     color: var(--primary-text-color);
 }
 .articleItem {
-    width: 100%;
+    width: 290px;
     display: flex;
     margin-bottom: 15px;
 }
 .media {
-    max-width: 28%;
+    width: 200px;
     position: relative;
-    width: 100%;
+   
     &:after {
         content: '';
         display: block;
@@ -45,6 +47,7 @@
     color: var(--primary-text-color);
 }
 .articleItemRight {
+    width: 200px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;

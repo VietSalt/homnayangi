@@ -14,6 +14,7 @@ import {
     useFetchRecentArticlesQuery,
 } from '@blog/client/web/api';
 import { useRouter } from 'next/router';
+import { Col, Row } from 'antd';
 
 const Page = () => {
     const router = useRouter();
@@ -25,13 +26,19 @@ const Page = () => {
     const { data: recentArticles = [] } = useFetchRecentArticlesQuery();
     return (
         <AppLayout>
-            <div style={{ display: 'flex' }}>
-                <Head>
-                    <title>{article.title + ' - ' + config.siteTitle}</title>
-                </Head>
-                <ArticleItem article={article} comments={comments}></ArticleItem>
-                <WidgetArea recentArticles={recentArticles.slice(0, 5)}></WidgetArea>
-            </div>
+            <Row>
+                <Col>
+                    <Head>
+                        <title>{article.title + ' - ' + config.siteTitle}</title>
+                    </Head>
+                </Col>
+                <Col xs={24} sm={24} xl={18}>
+                    <ArticleItem article={article} comments={comments}></ArticleItem>
+                </Col>
+                <Col sm={24} xl={6}>
+                    <WidgetArea recentArticles={recentArticles.slice(0, 5)}></WidgetArea>
+                </Col>
+            </Row>
         </AppLayout>
     );
 };
