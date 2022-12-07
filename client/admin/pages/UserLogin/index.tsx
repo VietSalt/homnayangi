@@ -39,7 +39,7 @@ export default function UserLogin() {
                     <ReactSVG className="brand" src={appConfig?.siteLogo} />
                     <div className="header-title">
                         <h2>{appConfig?.siteTitle}</h2>
-                        <p>Đăng nhập vào salt blog</p>
+                        <p>Đăng nhập vào hôm nay ăn gì? </p>
                     </div>
                 </div>
                 <div className={style.signInPanel}>
@@ -85,13 +85,9 @@ export default function UserLogin() {
                     </Form>
                 </div>
                 <div className="nodeblog">
-Được cung cấp bởi                    <a
-                        href={appConfig?.siteDomain}
-                        title="Hệ thống blog "
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                    Việt Salt
+                    Được cung cấp bởi{' '}
+                    <a href={appConfig?.siteDomain} title="Hệ thống blog " rel="noopener noreferrer" target="_blank">
+                        Việt Salt
                     </a>
                 </div>
             </div>

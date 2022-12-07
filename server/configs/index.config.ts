@@ -1,4 +1,4 @@
-export const environment = process.env.NODE_ENV ;
+export const environment = process.env.NODE_ENV;
 export const isDevMode = Object.is(environment, 'development');
 export const isProdMode = Object.is(environment, 'production');
 export const isTestMode = Object.is(environment, 'test');
@@ -14,7 +14,8 @@ export const MONGODB = {
         ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority'
         : isTestMode
         ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority'
-        : "mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority"||process.env.MONGODB_URL ||
+        : 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority' ||
+          process.env.MONGODB_URL ||
           `mongodb://${process.env.MONGODB_HOSTNAME || 'localhost'}:${process.env.MONGODB_PORT || '27017'}/blog`,
     username: process.env.MONGODB_USERNAME || '',
     password: process.env.MONGODB_PASSWORD || '',
@@ -31,8 +32,8 @@ export const ADMIN_USER_INFO = {
 };
 
 export const RSS = {
-    title: 'Salt Blog',
-    link: 'http://www.lizc.net',
+    title: 'Hôm nay ăn gì?',
+    link: '',
     language: 'zh-cn',
     description:
         'Trạm blog, tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích phát triển với những người trong Đạo!',
